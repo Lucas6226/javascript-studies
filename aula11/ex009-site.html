@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embaixada</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Digite o seu pais</h1>
+    <p><label for="pais">Pais de origem: </label><input type="text" name="pais" id="pais"></p>
+    <input type="button" value="Enviar" id="enviar">
+    <div id="resultado">
+        <h1>complete o questionario...</h1>
+    </div>
+    <script>
+        var pais = document.querySelector('input#pais')
+        var botao = document.querySelector('input#enviar')
+        var res = document.querySelector('div#resultado')
+        botao.addEventListener('click', enviar)
+
+        function enviar() {
+            res.innerHTML = `<h1> Morando no pais ${pais.value} você é </h1>`
+            if (pais.value == 'brasil') {
+                res.innerHTML += '<h1><strong>Brasileiro</strong></h1>'
+            } else {
+                res.innerHTML += '<h1><strong>Estrangeiro</strong></h1>'
+            }
+        }
+    </script>
+</body>
+</html>
